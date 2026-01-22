@@ -1,0 +1,78 @@
+1.	git init [en branch med namnet main skapas automatiskt]
+
+2.	echo ”duck” > README.md
+echo ”moose” >> README.md
+echo ”cat” >> README.md
+git add README.md
+
+3.	git commit -m ”Initial commit”
+
+4.	git branch ”feature1”
+git checkout feature1
+
+5.	echo >> ”dog” README.md
+sed -i 's/moose/mouse/' README.md
+git add README.md [för att lägga till ändringen till staging innan commit]
+git commit -m ”add dog and change moose to mouse in README.md”
+
+6.	git checkout main
+sed -i 's/moose/mammoth/' README.md
+git add README.md
+git commit -m ”chage moose to mammoth in README.md”
+
+7.	git merge feature1
+[Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Recorded preimage for 'README.md'
+Automatic merge failed; fix conflicts and then commit the result.]
+
+vim README.md [öppnar filen för att lösa mergekonflikten]
+git add README.md
+git commit
+
+8.	git tag extinct
+
+9.	git reset  -- hard HEAD~1
+
+10.	 git branch feature2
+
+
+
+11.	vim README.md [för att redigera filen och ändra till stor bokstav]
+git add README.md
+git commit -m ”Animals now begin with capitol letter in README.md”
+
+12.	 git checkout feature2
+touch fix1.txt [skapar filen om den inte redan finns]
+git add fix1.txt
+git commit -m ”Added file fix1.txt”
+touch fix2.txt
+git add fix2.txt
+git commit -m ”Added file fix2.txt”
+
+13.	 git checkout main
+
+14.	 git cherry-pick 3f161a1
+
+15.	 git branch cleanup_test
+git checkout cleanup_test
+echo ”Bird” >> README.md
+git add README.md
+git commit -m ”Added Bird to README.md”
+echo ”Fish”
+git add README.md
+git commit -m ”Added Fish to README.md”
+echo ”Snake” >> README.md
+git add README.md
+git commit -m ”Added Snake to README.md”
+git rebase -i HEAD~3 [Ändrar message manuellt till ”Added several animals”]
+
+16.	 echo ”Turtle” >> README.md
+git add README.md
+git commit -m ”Addid turtle”
+git commit –amend [för att rätta stavfelet i filen som öppnas]
+
+17.	 vim fix2.txt [Öppnar filen för att kunna klistra in texten från alla steg]
+
+
+
